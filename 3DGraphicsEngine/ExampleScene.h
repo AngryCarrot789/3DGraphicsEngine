@@ -13,7 +13,7 @@ public:
 		objs.push_back(ground);
 
 		std::shared_ptr<ExampleBunny> bunnylol(new ExampleBunny());
-		bunnylol->scale *= 0.2f;
+		bunnylol->scale *= 20.0f;
 		objs.push_back(bunnylol);
 
 		player.SetPosition(Vector3(0, GH_PLAYER_HEIGHT, 5));

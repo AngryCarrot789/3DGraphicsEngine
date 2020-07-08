@@ -12,6 +12,8 @@ class Mesh;
 class Texture;
 class Shader;
 
+// A class for creating objects in the game.
+// These objects do not implement gravity
 class GameObject {
 public:
 	GameObject();
@@ -35,6 +37,9 @@ public:
 	Vector3 pos;
 	Vector3 euler;
 	Vector3 scale;
+
+	//not implemented.
+	// rotation
 	Vector3 rot;
 
 	float p_scale;

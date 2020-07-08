@@ -21,6 +21,8 @@ void Physical::Update() {
     velocity += gravity * p_scale * GH_DT;
     velocity *= (1.0f - drag);
     pos += velocity * GH_DT;
+    if (pos.y < 0)
+        pos.y = 0;
 }
 
 void Physical::OnCollide(GameObject& other, const Vector3& push) {

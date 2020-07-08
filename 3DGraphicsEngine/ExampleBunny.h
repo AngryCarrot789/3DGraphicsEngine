@@ -2,13 +2,14 @@
 #include "GameObject.h"
 #include "Resources.h"
 
-class ExampleBunny : public GameObject {
+class ExampleBunny : public Physical {
 public:
     ExampleBunny() {
-        mesh = AquireMesh("floorplan.obj");
-        shader = AquireShader("texture_array");
-        texture = AquireTexture("floorplan_textures.bmp", 4, 4);
-        scale = Vector3(2, 2, 2);
+        mesh = AquireMesh("bunny.obj");
+        shader = AquireShader("texture");
+        texture = AquireTexture("gold.bmp");
+        pos = Vector3(0, 5.0f, 0);
+        scale = Vector3(1, 1, 1);
     }
     virtual ~ExampleBunny() {}
 };
