@@ -94,11 +94,11 @@ void Player::Look(float mouseDx, float mouseDy) {
 
 void Player::Move(float moveF, float moveL) {
     //Make sure movement is not too fast
-    //const float mag = std::sqrt(moveF * moveF + moveL * moveL);
-    //if (mag > 1.0f) {
-    //    moveF /= mag;
-    //    moveL /= mag;
-    //}
+    const float mag = std::sqrt(moveF * moveF + moveL * moveL);
+    if (mag > 1.0f) {
+        moveF /= mag;
+        moveL /= mag;
+    }
 
     //Movement
     const Matrix4 camToWorld = LocalToWorld() * Matrix4::RotY(cam_ry);
