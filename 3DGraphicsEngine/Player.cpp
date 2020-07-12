@@ -57,9 +57,11 @@ void Player::Update() {
     if (GH_INPUT->key['D']) {
         moveL -= 1.0f;
     }
+    isRunning = GH_INPUT->key[VK_SHIFT];
+
     Move(moveF, moveL);
 
-#if 0
+#if 1
     //Jumping
     if (onGround && GH_INPUT->key[VK_SPACE]) {
         velocity.y += 2.0f * p_scale;
@@ -92,11 +94,11 @@ void Player::Look(float mouseDx, float mouseDy) {
 
 void Player::Move(float moveF, float moveL) {
     //Make sure movement is not too fast
-    const float mag = std::sqrt(moveF * moveF + moveL * moveL);
-    if (mag > 1.0f) {
-        moveF /= mag;
-        moveL /= mag;
-    }
+    //const float mag = std::sqrt(moveF * moveF + moveL * moveL);
+    //if (mag > 1.0f) {
+    //    moveF /= mag;
+    //    moveL /= mag;
+    //}
 
     //Movement
     const Matrix4 camToWorld = LocalToWorld() * Matrix4::RotY(cam_ry);
@@ -105,7 +107,10 @@ void Player::Move(float moveF, float moveL) {
     //Don't allow non-falling speeds above the player's max speed
     const float tempY = velocity.y;
     velocity.y = 0.0f;
-    velocity.ClipMag(p_scale * GH_WALK_SPEED);
+    if (isRunning)
+        velocity.ClipMag(p_scale * GH_RUN_SPEED);
+    else
+        velocity.ClipMag(p_scale * GH_WALK_SPEED);
     velocity.y = tempY;
 }
 

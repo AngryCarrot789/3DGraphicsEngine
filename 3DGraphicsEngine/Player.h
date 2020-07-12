@@ -26,4 +26,5 @@ private:
 	float bob_phi;
 
 	bool onGround;
+	bool isRunning;
 };

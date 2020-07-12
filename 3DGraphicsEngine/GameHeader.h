@@ -32,6 +32,7 @@ static const int GH_MAX_RECURSION = 4;
 static const float GH_MOUSE_SENSITIVITY = 0.00075f;
 static const float GH_MOUSE_SMOOTH = 0.5f;
 static const float GH_WALK_SPEED = 2.9f;
+static const float GH_RUN_SPEED = 5.0f;
 static const float GH_WALK_ACCEL = 50.0f;
 static const float GH_BOB_FREQ = 8.0f;
 static const float GH_BOB_OFFS = 0.015f;

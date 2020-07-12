@@ -3,6 +3,7 @@
 
 Physical::Physical() {
     Reset();
+    PredictPhysicsValues();
 }
 
 void Physical::Reset() {

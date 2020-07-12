@@ -93,6 +93,7 @@ int Engine::Run() {
                 GH_HIDE_MOUSE = !GH_HIDE_MOUSE;
             }
 
+
             // A timer is required in order to make the
             // physics feel real; many updates are needed per second
             // before rendering. Too little updates and it's slo-mo.
@@ -113,10 +114,6 @@ int Engine::Run() {
             main_cam.worldView = player->WorldToCam();
             main_cam.SetSize(iWidth, iHeight, GH_NEAR_MIN, GH_FAR);
             main_cam.UseViewport();
-
-            for (auto objs : vObjects) {
-                objs->rot.x += GH_PI / 1000.0f;
-            }
 
             //Render scene
             GH_REC_LEVEL = GH_MAX_RECURSION;

@@ -11,6 +11,10 @@ public:
     virtual void Update() override;
     virtual void OnCollide(GameObject& other, const Vector3& push);
 
+    void PredictPhysicsValues() {
+        drag = (scale.x * scale.z) / 1000;
+    }
+
     void SetPosition(const Vector3& _pos) {
         pos = _pos;
         prev_pos = _pos;

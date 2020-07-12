@@ -12,8 +12,7 @@ class Mesh;
 class Texture;
 class Shader;
 
-// A class for creating objects in the game.
-// These objects do not implement gravity
+// A class for creating renderable objects in the game.
 class GameObject {
 public:
 	GameObject();
@@ -35,12 +34,19 @@ public:
 	Vector3 Forward() const;
 
 	Vector3 pos;
-	Vector3 euler;
 	Vector3 scale;
+	// 1.5 = 90 degrees
+	// 3.0 = 180 degrees
+	// Rotates around axis
+	Vector3 rotation;
 
-	//not implemented.
-	// rotation
-	Vector3 rot;
+	void Rotate(float x, float y, float z) {
+		rotation = Vector3(x, y, z);
+	}
+
+	void RotateDegrees(float x, float y, float z) {
+		rotation = Vector3(x / 60, y / 60, z / 60);
+	}
 
 	float p_scale;
 

@@ -4,6 +4,7 @@
 
 class ExampleBunny : public Physical {
 public:
+    float cc;
     ExampleBunny() {
         mesh = AquireMesh("bunny.obj");
         shader = AquireShader("texture");
@@ -11,5 +12,6 @@ public:
         pos = Vector3(0, 5.0f, 0);
         scale = Vector3(1, 1, 1);
     }
+
     virtual ~ExampleBunny() {}
 };

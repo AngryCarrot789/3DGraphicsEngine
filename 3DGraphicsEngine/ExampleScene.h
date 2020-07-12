@@ -14,6 +14,7 @@ public:
 
 		std::shared_ptr<ExampleBunny> bunnylol(new ExampleBunny());
 		bunnylol->scale *= 20.0f;
+		bunnylol->RotateDegrees(0, 45.0f, 0);
 		objs.push_back(bunnylol);
 
 		player.SetPosition(Vector3(0, GH_PLAYER_HEIGHT, 5));
